@@ -661,6 +661,15 @@ impl ContainerOptionsBuilder {
         self
     }
 
+    /// Specify the runtime to use for the container (corresponds to the `--runtime` docker cli argument)
+    pub fn runtime(
+        &mut self,
+        runtime: &str,
+    ) -> &mut Self {
+        self.params.insert("Runtime", json!(runtime));
+        self
+    }
+
     /// Specify any bind mounts, taking the form of `/some/host/path:/some/container/path`
     pub fn volumes(
         &mut self,
