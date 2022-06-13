@@ -666,7 +666,7 @@ impl ContainerOptionsBuilder {
         &mut self,
         runtime: &str,
     ) -> &mut Self {
-        self.params.insert("Runtime", json!(runtime));
+        self.params.insert("HostConfig.Runtime", json!(runtime));
         self
     }
 
